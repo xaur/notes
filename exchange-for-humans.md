@@ -1,0 +1,24 @@
+Design goals:
+
+* Dis-incentivise wash trading and bot manipulation
+* Allow some non-abusive bots
+* Funded by legit cc projects
+* Founders have influence (stake) and demand non-bullshit behavior [2]
+* If there's an existing exchange project satisfying high standards, of course join it and not reinvent the bicycle
+
+"It will become more about matching supply to demand as opposed to people churning things with bots all day on automated exchanges." -- jy-p [3]
+
+Rules. Subject to change, but must obey design goals above:
+
+* Operations that have cost: place order (store, occupy memory), cancel order (clear memory), execute trade (change state).
+* All operations have rate limits per account that are close to skilled humans: 1 op/sec, max ~1000 ops/day.
+* Some operations have delay, like cancel order [4].
+* No stale order removal like Bittrex [1], as long as user pays for space.
+* Fees: fixed, not %, very small. Selling 1 million units consumes same computing resources as selling 1 unit. Percentage is not justified (arguably scam).
+* Digits after dot are limited and adjusted to discourage 1-sat overbidding.
+* Orders have expiry (~commitment) visible to all players (optional?).
+
+[1] https://support.bittrex.com/hc/en-us/articles/115003004171
+[2] https://www.reddit.com/r/siacoin/comments/7pfyjc/brief_update_on_binance/dsjci0y/
+[3] https://www.blockchaintechnology-news.com/2018/01/23/atomic-swaps-decentralised-exchange-community-decred/
+[4] https://github.com/p2p/bitcoin-exchange
