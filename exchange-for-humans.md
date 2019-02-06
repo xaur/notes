@@ -15,7 +15,7 @@ Rules. Subject to change, but must obey design goals above:
 * Some operations have delay, like cancel order [4].
 * No stale order removal like Bittrex [1], as long as user pays for space.
 * Fees: fixed, not %, very small. Selling 1 million units consumes same computing resources as selling 1 unit. Percentage is not justified (arguably scam).
-* Digits after dot are limited and adjusted to discourage 1-sat overbidding.
+* Max decimal places are configurable and adjusted to prevent 1-sat overbidding.
 * Orders have expiry (~commitment) visible to all players (optional?).
 
 [1] https://support.bittrex.com/hc/en-us/articles/115003004171
