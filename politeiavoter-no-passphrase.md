@@ -32,3 +32,4 @@ Bonus:
 Discussions:
 
 * [2019-02-26](https://matrix.to/#/!VFRvyndKpzcLrVslQD:decred.org/$15512027129365SkNlj:decred.org)
+* [2019-03-12](https://matrix.to/#/!VFRvyndKpzcLrVslQD:decred.org/$155236122824179HUtQi:decred.org)
