@@ -1,6 +1,6 @@
 Published as [politeia#720](https://github.com/decred/politeia/issues/720)
 
-`politeiavoter` collects unencrypted wallet private passphrase from the user to sign votes via `dcrwallet`. This issue suggests an alternative protocol where sharing passphrase with clients like `politeiavoter` is not necessary. The protocol has a side effect of a step towards enabling hardware signing devices.
+`politeiavoter` collects unencrypted wallet private passphrase from the user to sign votes via `dcrwallet`. This issue suggests an alternative protocol where sharing passphrase with clients like `politeiavoter` is not necessary. The protocol has a side effect of a step towards enabling signing Politeia votes offline or with hardware signing devices.
 
 My security concern is that `politeiavoter` is a program that communicates with a centralized server over a network. In case of a programming mistake, it could leak the passphrase to the server. This is very unlikely and it would be a shameful epic fail by the developers. Even if that never happens, I'd like to put less trust into `politeiavoter`. I'd like to only share the passphrase with `dcrwallet` and have all other programs that need to sign messages ask `dcrwallet` to do it for them.
 
@@ -25,8 +25,9 @@ In the above example `politeiavoter` is used, but it could be any other program 
  
 Bonus:
 
-* if this is implemented, it will pave the way to signing Politeia votes with other signing devices like Trezor. It seems reasonable to use `dcrwallet` to talk to Trezor, so that `politeiavoter` does not need to implement Trezor-specific API.
-* the benefit for `politeiavoter` is that it would need a bit less paranoid (although still decent) audit because it could do less damage without wallet private passphrase
+* If this is implemented, it will pave the way to signing Politeia votes with other signing devices like Trezor. It seems reasonable to use `dcrwallet` to talk to Trezor, so that `politeiavoter` does not need to implement Trezor-specific API.
+* Offline signing becomes reachable. Signing request and response need to be saved as files and passed between online and offline machines (USB, CD/DVD, QR codes). Since it includes multiple messages at once, only one signing roundtrip is necessary, and then the trickler can slowly send signed votes.
+* The benefit for `politeiavoter` is that it would need a bit less paranoid (although still decent) audit because it could do less damage without wallet private passphrase.
 
 Discussions:
 
