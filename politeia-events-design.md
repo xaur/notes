@@ -7,6 +7,7 @@ Activity feeds similar to those in Reddit would significantly improve the UX and
 This design can support features to help users stay on top of any activity:
 
 * global activity feed (politeiagui #783) - like Reddit `/r/subreddit/comments` page
+* notifications for all commets of a proposal (politeiagui #1040)
 * personal subscriptions feed (politeiagui #844) - like Reddit `unread` page
 * proposal activity/history feed (politeiagui #820)
 * user activity feed - like Reddit `/user/name` page
