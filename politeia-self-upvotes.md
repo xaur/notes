@@ -1,17 +1,39 @@
 ---
+title: Disallow to upvote and downvote own comments
 published_url: https://github.com/decred/politeiagui/issues/845
 ---
 
-Politeia UX is very similar to Reddit UX and it fires up my Reddit neurons all the time. The fact that my comments are not automatically upvoted by me is super confusing. Besides confusion it leads to comment up/downvote score distortion as some authors upvote their comments while others don't.
+It is confusing and arguably a bit harmful that upvoting own comments is neither automatic nor disabled:
 
-I see two approaches:
+* confusing because Politeia UX is very similar to Reddit UX and it fires up my Reddit neurons all the time
+* harmful because it leads to comment score distortion as some authors upvote their comments while others don't, as demonstrated [here](https://github.com/RichardRed0x/pi-research/blob/master/data/comments-and-updown-votes/pi-users-comments-votes.csv)
 
-1. Upvote own comments by default and allow to un-upvote
-   * like Reddit, this reduces confusion by reducing UX difference with Reddit
-   * allowing to un-upvote and even downvote own comment later has a use case: if I realize tomorrow that my comment is junk I can remove my upvote and add a downvote
-1. Do not upvote own comments by default _and_ do not allow it
-   * this is less confusing than current behavior because it leaves no choice
-   * this is still more confusing for heavy Reddit users
+There are two ways to remove user confusion and score distortion:
+
+1. Upvote own comments by default
+   * removes confusion by reducing UX difference with Reddit
+   * allows to un-upvote and even downvote own comment later
+   * cannot retroactively add upvotes in closed proposals
+   * even for open proposals, cannot add upvotes on behalf of users (requires a signed message)
+   * adjusting comment score in closed proposals will be an ugly hack
+1. Do not upvote own comments _and_ do not allow it
+   * less confusing than current behavior because it gives no choice
+   * a bit more confusing for heavy Reddit users
    * if upvoting own comments is not allowed, so should be downvoting
+   * bonus: slightly less data saved in the Git repo
+   * adjusting comment score might be less ugly
 
-I suggest implementing first approach. If that happens I also suggest automatically upvoting all comments by on behalf of their authors to remove any score distortion.
+Is downvoting own comments useful? I can imagine a use case: if I realize tomorrow that my comment is junk I can remove my upvote and add a downvote. However, I don't really expect anyone to use this feature, and besides comment voting is locked when proposal is voted or abandoned, so the window to change your mind is limited.
+
+Considering multiple discussions I suggest to go with option 2:
+
+* disable own upvotes and downvotes on future comments (reject them without saving to Git)
+* recalculate score of existing comments to not account for self votes
+* if possible, remove self votes from Git
+
+Discussions:
+
+* [2018-10-18](https://matrix.to/#/!VFRvyndKpzcLrVslQD:decred.org/$153988953632992GOYKc:decred.org)
+* [2019-03-02](https://matrix.to/#/!lbzTjhzNbIaDbuAxkS:decred.org/$155154354314212PIYmG:decred.org)
+* [2019-03-04](https://www.reddit.com/r/decred/comments/axe15w/is_it_ok_to_upvote_your_own_comments_on_politeia/)
+* [2019-03-19](https://matrix.to/#/!MIGqWXfLFBwhipPKYL:decred.org/$155298458732381rqQPi:decred.org): it's a failing of the UI. 5 people agree it should not be possible.
