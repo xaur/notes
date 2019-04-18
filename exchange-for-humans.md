@@ -18,7 +18,7 @@ Rules. Subject to change, but must obey design goals above:
 * Max decimal places are configurable and adjusted to prevent 1-sat overbidding.
 * Orders have expiry (~commitment) visible to all players (optional?).
 
-[1] https://support.bittrex.com/hc/en-us/articles/115003004171
-[2] https://www.reddit.com/r/siacoin/comments/7pfyjc/brief_update_on_binance/dsjci0y/
-[3] https://www.blockchaintechnology-news.com/2018/01/23/atomic-swaps-decentralised-exchange-community-decred/
+[1] https://support.bittrex.com/hc/en-us/articles/115003004171  
+[2] https://www.reddit.com/r/siacoin/comments/7pfyjc/brief_update_on_binance/dsjci0y/  
+[3] https://www.blockchaintechnology-news.com/2018/01/23/atomic-swaps-decentralised-exchange-community-decred/  
 [4] https://github.com/p2p/bitcoin-exchange
