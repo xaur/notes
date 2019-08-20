@@ -9,7 +9,7 @@ updated_date: 2019-06-17 19:30+00:00
 - [ ] read [Proposal Guidelines](https://docs.decred.org/governance/politeia/proposal-guidelines/)
 - [ ] study [existing proposals](https://proposals.decred.org/)
 - [ ] test the grounds: ask for general sentiment about your idea in chats ([Matrix, Discord, Slack](https://decred.org/community/), etc) or [on Reddit](https://www.reddit.com/r/decred/)
-- [ ] in case of a complex domain-specific topic that was not previously voted or heavily discussed by the community, consider running an educational and Q&A campaigns _before_ putting the proposal to a vote
+- [ ] in case of a complex domain-specific topic that was not previously voted or heavily discussed by the community, consider running a ~2 week educational Q&A campaign hosted by proposal owners and coordinators _before_ putting the proposal to a vote
 
 ### draft, feedback, promotion and vote
 
