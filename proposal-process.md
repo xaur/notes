@@ -13,7 +13,8 @@ updated_date: 2019-06-17 19:30+00:00
 
 ### draft, feedback, promotion and vote
 
-- [ ] write proposal draft [in Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and post it as [gist](https://gist.github.com/) ([help](https://help.github.com/en/articles/about-gists))
+- [ ] write proposal draft [in Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and post it as [gist](https://gist.github.com/) ([gist help](https://help.github.com/en/articles/about-gists))
+  * for RFP-like proposals, consider including a deadline for participants to make their submissions
 - [ ] share the draft link in #proposals room
 - [ ] never assume that a lot of people read chats
 - [ ] minimize initial review round, minimize discussion not recorded on Politeia
