@@ -1,7 +1,7 @@
 ---
-published_date: 2019-03-14 12:57+00:00
+published_utc: 2019-03-14 12:57
 published_url: https://github.com/decred/dcrdocs/issues/848#issuecomment-471795670
-updated_date: 2019-06-17 19:30+00:00
+updated_utc: 2019-09-15 09:45
 ---
 
 ### preparation
@@ -14,7 +14,7 @@ updated_date: 2019-06-17 19:30+00:00
 ### draft, feedback, promotion and vote
 
 - [ ] write proposal draft [in Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and post it as [gist](https://gist.github.com/) ([gist help](https://help.github.com/en/articles/about-gists))
-  * for RFP-like proposals, consider including a deadline for participants to make their submissions
+  * for RFP-like proposals, include a deadline for participants to make their submissions and also any rules that they must adhere to
 - [ ] share the draft link in #proposals room
 - [ ] never assume that a lot of people read chats
 - [ ] minimize initial review round, minimize discussion not recorded on Politeia
@@ -38,11 +38,16 @@ updated_date: 2019-06-17 19:30+00:00
 ### if the vote failed
 
 - [ ] talk to people, study why it failed
+- [ ] look at vote counts
+  * if it's like 95% No then the idea is really bad and needs to be entirely reconsidered or abandoned
+  * but if it's like 40% Yes it's actually a good result that means thousands of tickets supported the idea and it could pass after adjustment
 - [ ] consider adjusting the proposal and trying another vote
 
 ### if the vote passed
 
 - [ ] keep the community updated on how the work is progressing
+  * immediately after the vote passed, post a short update noting when the work will begin and when first results are expected
+  * post progress updates periodically, say every 2-4 weeks
   * long tedious reports are often not necessary, but a few words every couple weeks is so much better than silence
   * check how Ditto reported for a good example
 - [ ] make sure to submit monthly invoices before ~10th for work performed in previous month
