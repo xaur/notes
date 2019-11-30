@@ -1,22 +1,27 @@
 ---
 published_utc: 2019-03-14 12:57
 published_url: https://github.com/decred/dcrdocs/issues/848#issuecomment-471795670
-updated_utc: 2019-09-15 09:45
+updated_utc: 2019-11-30
 ---
+
+Below is a compilation of ideas that help to increase the chances of your proposal on Politeia.
 
 ### preparation
 
 - [ ] read [Proposal Guidelines](https://docs.decred.org/governance/politeia/proposal-guidelines/)
-- [ ] study [existing proposals](https://proposals.decred.org/)
+- [ ] study [existing proposals](https://proposals.decred.org/), note which were approved and rejected
 - [ ] test the grounds: ask for general sentiment about your idea in chats ([Matrix, Discord, Slack](https://decred.org/community/), etc) or [on Reddit](https://www.reddit.com/r/decred/)
-- [ ] in case of a complex domain-specific topic that was not previously voted or heavily discussed by the community, consider running a ~2 week educational Q&A campaign hosted by proposal owners and coordinators _before_ putting the proposal to a vote
+- [ ] in case of a complex domain-specific topic that was not previously voted or heavily discussed by the community, consider running a ~2 week educational Q&A campaign hosted by proposal owners and coordinators _before_ putting the proposal to a vote (e.g. as a Reddit AMA)
+- [ ] plan your finances: payments are made in DCR at an average rate of the month when the work was performed. Together with the delay of payment historically this resulted in up to +/- 50% difference between billed and received USD equivalent. If you work long enough it averages out, but for short proposals (e.g. 3 months) this is an extra risk that must be planned for.
+- [ ] if you are new to Decred, be aware that past contributions tend to significantly increase support
 
 ### draft, feedback, promotion and vote
 
-- [ ] write proposal draft [in Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and post it as [gist](https://gist.github.com/) ([gist help](https://help.github.com/en/articles/about-gists))
+- [ ] write proposal draft [in Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and post it as [gist](https://gist.github.com/) ([gist help](https://help.github.com/en/articles/about-gists)) or submit as a pull request to [proposals](https://github.com/decredcommunity/proposals) repository
   * for RFP-like proposals, include a deadline for participants to make their submissions and also any rules that they must adhere to
-- [ ] share the draft link in #proposals room
-- [ ] never assume that a lot of people read chats
+  * make sure to include _all_ important info, including who you are and links to verify your background, explicit schedule of payments, deliverables, reporting, etc; Remember: your proposal is the final contract with Decred stakeholders, it must not be vague
+- [ ] share the draft link in #proposals [chat](https://chat.decred.org/) room for first round of feedback from community members
+- [ ] never assume that a lot of people follow all chat comms
 - [ ] minimize initial review round, minimize discussion not recorded on Politeia
   * people who commented on chat/Reddit are unlikely to re-post their comments on Politeia
 - [ ] publish the proposal on Politeia
@@ -24,14 +29,19 @@ updated_utc: 2019-09-15 09:45
 - [ ] promote pre-vote:
   * submit proposal link to [r/decred](https://www.reddit.com/r/decred/)
   * post in #proposals room
-  * post in rooms relevant to the domain of the proposal (e.g. #marketing, #dev)
+  * post in rooms relevant to the domain of the proposal (e.g. #marketing or #dev)
   * tweet from your twitter account and ask in #social\_media or #proposals to retweet
   * find a good balance between being too annoying and too shy
-  * Remember: if _you_ don't promote your proposal, it may happen that nobody will!
+  * Remember: if _you_ don't promote your proposal, it may happen that _nobody_ will!
+- [ ] actively engage with commenters: answer questions, clarify misunderstandings. Make sure you don't miss email notifications from Politeia.
+- [ ] as soon as you clarify something confusing, update the proposal to include that
+  * the sooner you update, the less clarification you'll need to do from that point
+  * all edits will be recorded on Politeia
 - [ ] let it hang on Politeia long enough to collect feedback
   * I recommend 2 weeks
   * even longer for bigger budgets and bigger impact
-- [ ] edit the proposal in response to feedback, all edits will be recorded on Politeia
+- [ ] authorize the vote
+  * after the vote begins you can no longer edit the proposal
 - [ ] promote again after you authorized vote
 - [ ] promote mid vote or 1-2 days before finish
 
@@ -47,8 +57,13 @@ updated_utc: 2019-09-15 09:45
 
 - [ ] keep the community updated on how the work is progressing
   * immediately after the vote passed, post a short update noting when the work will begin and when first results are expected
-  * post progress updates periodically, say every 2-4 weeks
+  * post progress updates periodically, say every 2-4 weeks, I recommend submitting them to the [proposals](https://github.com/decredcommunity/proposals) repository
   * long tedious reports are often not necessary, but a few words every couple weeks is so much better than silence
   * check how Ditto reported for a good example
-- [ ] make sure to submit monthly invoices before ~10th for work performed in previous month
+- [ ] learn how payouts work
+  * make sure to submit monthly invoices before ~10th for work performed in previous month
 
+### other good read
+
+- https://docs.decred.org/governance/politeia/proposal-guidelines/
+- https://medium.com/@decreddragon/writing-proposals-on-politeia-pi-e345621652a2
