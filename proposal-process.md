@@ -1,8 +1,15 @@
 ---
 published_utc: 2019-03-14 12:57
 published_url: https://github.com/decred/dcrdocs/issues/848#issuecomment-471795670
-updated_utc: 2019-11-30
+updated_utc: 2020-04-03
 ---
+
+TODO:
+
+- transfer of assets
+- for recurring work, plan renewal proposals such that there is no interruption of funding
+- summary of updates made to the proposal, see a good example here: https://proposals.decred.org/proposals/063e38270b475ad680e98c12d1a48e322f4e8defe40b265272ea60c6d2202b13
+- clearly state end condition: when term ends, when money runs out, or whatever
 
 Below is a compilation of ideas that help to increase the chances of your proposal on Politeia.
 
@@ -15,7 +22,7 @@ Below is a compilation of ideas that help to increase the chances of your propos
 - [ ] plan your finances: payments are made in DCR at an average rate of the month when the work was performed. Together with the delay of payment historically this resulted in up to +/- 50% difference between billed and received USD equivalent. If you work long enough it averages out, but for short proposals (e.g. 3 months) this is an extra risk that must be planned for.
 - [ ] if you are new to Decred, be aware that past contributions tend to significantly increase support
 
-### draft, feedback, promotion and vote
+### draft and feedback
 
 - [ ] write proposal draft [in Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) and post it as [gist](https://gist.github.com/) ([gist help](https://help.github.com/en/articles/about-gists)) or submit as a pull request to [proposals](https://github.com/decredcommunity/proposals) repository
   * for RFP-like proposals, include a deadline for participants to make their submissions and also any rules that they must adhere to
@@ -24,6 +31,9 @@ Below is a compilation of ideas that help to increase the chances of your propos
 - [ ] never assume that a lot of people follow all chat comms
 - [ ] minimize initial review round, minimize discussion not recorded on Politeia
   * people who commented on chat/Reddit are unlikely to re-post their comments on Politeia
+
+### publishing and promoting
+
 - [ ] publish the proposal on Politeia
   * try to include any useful info generated during draft discussion outside Politeia
 - [ ] promote pre-vote:
@@ -42,8 +52,11 @@ Below is a compilation of ideas that help to increase the chances of your propos
   * even longer for bigger budgets and bigger impact
 - [ ] authorize the vote
   * after the vote begins you can no longer edit the proposal
+  * but new comments and questions can stil appear, keep an eye on them and respond quickly
 - [ ] promote again after you authorized vote
+  * e.g. tweet about it and ask in #media for a retweet
 - [ ] promote mid vote or 1-2 days before finish
+  * e.g. tweet about it and ask in #media for a retweet
 
 ### if the vote failed
 
@@ -55,6 +68,7 @@ Below is a compilation of ideas that help to increase the chances of your propos
 
 ### if the vote passed
 
+- [ ] optionally tweet about the success and what's next
 - [ ] keep the community updated on how the work is progressing
   * immediately after the vote passed, post a short update noting when the work will begin and when first results are expected
   * post progress updates periodically, say every 2-4 weeks, I recommend submitting them to the [proposals](https://github.com/decredcommunity/proposals) repository
