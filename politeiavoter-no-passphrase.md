@@ -1,6 +1,12 @@
-Published as [politeia#720](https://github.com/decred/politeia/issues/720)
+---
+published_url: https://github.com/decred/politeia/issues/720
+published_utc: 2019-03-11
+updated_utc: 2020-04-03
+---
 
-`politeiavoter` collects unencrypted wallet private passphrase from the user to sign votes via `dcrwallet`. This issue suggests an alternative protocol where sharing passphrase with clients like `politeiavoter` is not necessary. The protocol has a side effect of a step towards enabling signing Politeia votes offline or with hardware signing devices.
+`politeiavoter` collects unencrypted wallet private passphrase from the user to sign votes via `dcrwallet`. This post suggests an alternative protocol where sharing passphrase with clients like `politeiavoter` is not necessary. The protocol has a side effect of a step towards enabling signing Politeia votes offline or with hardware signing devices.
+
+It is common in computer security to _not_ share credentials with unprivigeled software. Programs that need to run with elevated privileges do not collect your root password, instead some trusted system component handles password entry and calls the program. Additionally, in mobile operating systems it is common to have a permission system where an app requests a permission to perform a certain operation, the system brings it up to the user, the user approves it temporarily or permanently, and the system grants the app the ability to perform the operation.
 
 My security concern is that `politeiavoter` is a program that communicates with a centralized server over a network. In case of a programming mistake, it could leak the passphrase to the server. This is very unlikely and it would be a shameful epic fail by the developers. Even if that never happens, I'd like to put less trust into `politeiavoter`. I'd like to only share the passphrase with `dcrwallet` and have all other programs that need to sign messages ask `dcrwallet` to do it for them.
 
@@ -21,7 +27,10 @@ An example implementation could work as follows:
 * the user runs `dcrctl --wallet approvesign <request id>`. The command executes only if the wallet is unlocked. If that is feasible, `dcrwallet` can prompt for the passphrase here to ensure the wallet is only unlocked for this single operation. `dcrwallet` signs the requested message(s) with requested key(s) and passes signed data back to the caller.
 * `politeiavoter` proceeds with the signed data (e.g. sends it to Politeia server)
 
-In the above example `politeiavoter` is used, but it could be any other program that needs to sign data.
+In the above example `politeiavoter` is used, but it could be any other program that needs to sign data. Examples:
+
+- command line tool to stake with VSP that implements new accountless API of dcrstakepool (https://github.com/decred/dcrstakepool/issues/574)
+- dcrdex client (https://github.com/decred/dcrdex/issues/36)
  
 Bonus:
 
