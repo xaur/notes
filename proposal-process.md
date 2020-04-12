@@ -1,7 +1,7 @@
 ---
 published_utc: 2019-03-14 12:57
 published_url: https://github.com/decred/dcrdocs/issues/848#issuecomment-471795670
-updated_utc: 2020-04-03
+updated_utc: 2020-04-12
 ---
 
 TODO:
@@ -21,6 +21,17 @@ Below is a compilation of ideas that help to increase the chances of your propos
 - [ ] in case of a complex domain-specific topic that was not previously voted or heavily discussed by the community, consider running a ~2 week educational Q&A campaign hosted by proposal owners and coordinators _before_ putting the proposal to a vote (e.g. as a Reddit AMA)
 - [ ] plan your finances: payments are made in DCR at an average rate of the month when the work was performed. Together with the delay of payment historically this resulted in up to +/- 50% difference between billed and received USD equivalent. If you work long enough it averages out, but for short proposals (e.g. 3 months) this is an extra risk that must be planned for.
 - [ ] if you are new to Decred, be aware that past contributions tend to significantly increase support
+
+### red flags
+
+Based on experience with past proposals, some combinations of the items below raise red flags for community members:
+
+- No prior participation in Decred community
+- No prior contributions to Decred ecosystem
+- No communication before submitting the proposal
+- Too high budget
+- For developers, no demonstrable contribution to open source
+- Vague speech and thought
 
 ### draft and feedback
 
