@@ -20,19 +20,40 @@
 - https://matrix.to/#/!zefvTnlxYHPKvJMThI:decred.org/$MFVmkimdCIH80kM-OcVSGI4LRBSXexVXB9O_TM-7msY
 - https://www.reddit.com/r/decred/comments/isifn2/bitcoin_engineers_identify_and_patch/
 
+## Reflection
+
+The good bits:
+
+- most importantly, the vuln was submitted and patched
+- this is debatable, but the time given to patch and upgrade was _somewhat_ reasonable (64 days between original submission and the public disclosure via CoinDesk)
+- the researchers have notified Decred about their intent to disclose publicly 13 days in advance (51 day since the original submission)
+- bug bounty program has proven to work and incentivize security research of Decred software
+- Decred and bug bounty got some media mentions (ZDNet)
+
+The bad bits:
+
+- researchers' plan to go public in early Sep was unexpected by Decred and the devs had to cut an unplanned patch release
+- operators of Decred nodes who build from source had 63 days to upgrade between the patch on master and public disclosure, those who use binaries had 13 days to upgrade, assuming all have been perfectly notified at the moment of master patch/binary release
+- 64 days is not "responsible disclosure" if we use Google Project Zero's 90-day delay as a standard
+- Decred got some negative press from all the outlets that mixed up the facts (all the way down to claiming that "Bitcoin devs patched a vulnerability Decred")
+- this disclosure and media push raise too many questions, e.g.
+  - why btcd an dcrd are the only two projects chosen by the paper that have not been patched back in 2018
+  - why Sep 9
+  - why not wait a bit more until Decred has upgraded enough (after all, it was a subject of the paper and it paid a bounty)
+  - why not check and notify bigger coins like Dash
+  - why so much misinformation
+
 ## Media observations
 
 Delays between some timestamps suggest it was a professional media push whose organizers had fast rails to outlets like CoinDesk and ZDNet.
 
 Some articles and tweets (mostly the early ones) do not have misinformation about Decred and do not focus on it at all (like CoinDesk). All they do is help you imagine how bad it _could_ go, while researchers themselves acknowledge there is no trace of it being exploited in the wild.
 
-My non-malicious theory is that this media push is to make the media presence for researchers who found the vulnerability and the Bcoin project. The "official" version why the vuln was only disclosed 2 years after it was discovered and patched in Bitcoin, is because the network was not "safe enough" to disclose (which implies it has only become "safe" in Sep 2020).
+My non-malicious theory is that this media push is to make the media presence and promotion for researchers who found the vulnerability, and possibly the Bcoin project. My main argument in favor of this theory is the observation that CoinDesk article was published 45 min after the paper PDF was updated on the invdos.net webserver, and another observation that the CoinDesk release was made 0.5h _before_ the bitcoin-dev mailing list was notified. The "official" version why the vuln was only disclosed 2 years after it was discovered and patched in Bitcoin, is because the network was not "safe enough" to disclose (which implies it has only become "safe" in Sep 2020).
 
-But some articles and tweets contain outright misinformation, down to the blatant headline "Bitcoin engineers identify and patch vulnerability in Decred, Btcd blockchains" in The Daily Chain. My non-malicious theory here is that, observing that these are mostly "second wave" media, the "journalists" did their best to craft clickable headlines while not wasting too much time on research.
+But some articles and tweets contain outright misinformation, down to the blatant headline "Bitcoin engineers identify and patch vulnerability in Decred, Btcd blockchains" in The Daily Chain. My non-malicious theory here is that, observing that misinformation mostly comes from "second wave" media, the "journalists" did their best to craft clickable headlines while not wasting too much time on due research.
 
 ## Media timeline
-
----
 
 - utc: 2020-07-07
 - event: On 2020-Jul-07 we were notified via our bounty program about of this vulnerability in Decred by @tuxcanfly. We acknowledged the email within 2 hours. We investigated and opened a PR to patch the vulnerability within a day https://github.com/decred/dcrd/pull/2253
@@ -90,6 +111,7 @@ But some articles and tweets contain outright misinformation, down to the blatan
 - utc: 2020-08-27
 - event: our lead developer @davecgh was contacted by both @tuxcanfly and Braydon Fuller (Original finder) that they are going to go public with the CVE
 - source_url: https://twitter.com/degeri_crypto/status/1305591786065330176
+- note: this is 51th day since the initial submission on 2020-07-07
 
 ---
 
@@ -128,6 +150,8 @@ But some articles and tweets contain outright misinformation, down to the blatan
   - note that the story published timestamp is just 45 minutes since Last-Modified of the PDF
   - this is 2^8th day since Decred was notified of the vuln :tada:. Note that 64 is less than the 90 days disclosure delay adopted by Google Project Zero (if can call this a "standard", not sure)
   - 'High' in quotes of the title may indicate the professionalism of the journalist
+  - it carefully does not mention word "Decred" at all (as usual for CoinDesk), despite it was one of the few projects analyzed by the paper
+  - it does not mention that Khan was hunting for bugs in Decred for its bug bounty program, like ZDNet did
 
 ---
 
@@ -142,7 +166,10 @@ But some articles and tweets contain outright misinformation, down to the blatan
 - utc: 2020-09-09 13:28:38
 - event: Braydon Fuller posted in bitcoin-dev mailing list
 - url: https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/018164.html
-- note: referenced by Bitcoin Optech newsletter to be released Sep 16 https://github.com/bitcoinops/bitcoinops.github.io/pull/458
+- notes:
+  - the fact that Bitcoin developers mailing list was notified 0.5h _after_ the CoinDesk release is the main reason why I believe the main goal of this disclosure was self-promotion
+  - zero replies in that thread as of 2020-09-15 (6 days passed) hints at the level of interest Bitcoin devs had in this vulnerability https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2020-September/thread.html 
+  - referenced by Bitcoin Optech newsletter to be released Sep 16 https://github.com/bitcoinops/bitcoinops.github.io/pull/458
 
 ---
 
