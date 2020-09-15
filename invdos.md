@@ -11,6 +11,7 @@
 
 - Sep-09 https://www.coindesk.com/high-severity-bug-in-bitcoin-software-revealed-2-years-after-fix
 - Sep-12 https://www.zdnet.com/article/researcher-kept-a-major-bitcoin-bug-secret-for-two-years-to-prevent-attacks/
+- Sep-12 https://securityaffairs.co/wordpress/108188/hacking/invdos-dos-bitcoin-core.html
 - Sep-13 https://decrypt.co/41685/developers-reveal-2018-bitcoin-bug-used-to-crash-entire-networks
 - Sep-14 https://thedailychain.com/bitcoin-engineers-identify-and-patch-vulnerability-in-decred-btcd-blockchains/
 - Sep-14 https://www.cryptoglobe.com/latest/2020/09/bitcoin-engineers-rediscover-major-blockchain-vulnerability-on-decred/
@@ -28,7 +29,7 @@ The good bits:
 - this is debatable, but the time given to patch and upgrade was _somewhat_ reasonable (64 days between original submission and the public disclosure via CoinDesk)
 - the researchers have notified Decred about their intent to disclose publicly 13 days in advance (51 day since the original submission)
 - bug bounty program has proven to work and incentivize security research of Decred software
-- Decred and bug bounty got some media mentions (ZDNet)
+- Decred and bug bounty got some media mentions (ZDNet, Cryptoglobe)
 
 The bad bits:
 
@@ -52,6 +53,44 @@ Some articles and tweets (mostly the early ones) do not have misinformation abou
 My non-malicious theory is that this media push is to make the media presence and promotion for researchers who found the vulnerability, and possibly the Bcoin project. My main argument in favor of this theory is the observation that CoinDesk article was published 45 min after the paper PDF was updated on the invdos.net webserver, and another observation that the CoinDesk release was made 0.5h _before_ the bitcoin-dev mailing list was notified. The "official" version why the vuln was only disclosed 2 years after it was discovered and patched in Bitcoin, is because the network was not "safe enough" to disclose (which implies it has only become "safe" in Sep 2020).
 
 But some articles and tweets contain outright misinformation, down to the blatant headline "Bitcoin engineers identify and patch vulnerability in Decred, Btcd blockchains" in The Daily Chain. My non-malicious theory here is that, observing that misinformation mostly comes from "second wave" media, the "journalists" did their best to craft clickable headlines while not wasting too much time on due research.
+
+## Misinformation
+
+tl;dr the misinformation was nicely addressed in [this](https://twitter.com/degeri_crypto/status/1305591774698786821) short thread by @degeri.
+
+[ZDNet](https://www.zdnet.com/article/researcher-kept-a-major-bitcoin-bug-secret-for-two-years-to-prevent-attacks/):
+
+> Technical details were published earlier this week after the same vulnerability was independently discovered in another cryptocurrency, based on an older version of the Bitcoin code that hadn't received the patch.
+
+Severity = low. This para does not name the coin but I'm sure it refers to Decred. If so, this reads like "Decred is based on Bitcoin code", which is technically correct but puts Decred in the same bucket with low effort forks of Bitcoin Core. See [Decred is not a fork of Bitcoin](https://github.com/decredcommunity/wiki/blob/master/wiki/misconceptions.md#decred-is-a-fork-of-bitcoin) for details.
+
+[Decrypt](https://decrypt.co/41685/developers-reveal-2018-bitcoin-bug-used-to-crash-entire-networks):
+
+> Bitcoin Engineers Rediscover Huge Blockchain Vulnerability
+
+Saying that "blockchain" was vulnerable overblows the issue. The vuln (theoretically) allows to crash the nodes and slow down the network, but the "blockchain" (the database, cryptography, coins) is not compromised by it.
+
+> could have led to entire systems of nodes being shut down
+
+Overblows the issue. The shut down nodes can be restarted. It is a question of how long it takes to crash one node vs how long it takes to restart it. Please contact experts for more details.
+
+> published a research paper this week detailing how they found it in a number of other blockchain iterations: Btcd and Decred.
+
+btcd (lowercase) is not a blockchain iteration. It is an alternative full node implementation for Bitcoin blockchain. Bitcoin Core, Bcoin, btcd and others use the same blockchain.
+
+> A month later, Khan discovered the vulnerability in another blockchain network, Decred. Khan, in tandem with other blockchain engineers, rolled out fixes to the vulnerabilities in late August.
+
+Decred was fixed by David Hill in pull request [2253](https://github.com/decred/dcrd/pull/2253). Khan did fix btcd in [1599](https://github.com/btcsuite/btcd/pull/1599) and [1603](https://github.com/btcsuite/btcd/pull/1603), and note that both used code from Decred. I have to point this out because it appears that this imprecise wording has led The Daily Chain (which referenced this Decrypt story) to believe that "Bitcoin developers patched Decred", which is false.
+
+[The Daily Chain](https://thedailychain.com/bitcoin-engineers-identify-and-patch-vulnerability-in-decred-btcd-blockchains/):
+
+> Bitcoin engineers identify and patch vulnerability in Decred, Btcd blockchains
+
+Double false. Decred was [patched](https://github.com/decred/dcrd/pull/2253) by Decred devs. btcd is not a blockchain.
+
+> the vulnerability would allow an attacker to essentially shut down the blockchains in question
+
+Slow down, but not shut down. Please contact experts for clarifications.
 
 ## Media timeline
 
@@ -261,6 +300,13 @@ But some articles and tweets contain outright misinformation, down to the blatan
 
 ---
 
+- utc: 2020-09-12 14:18:15
+- event: Pierluigi Paganini published in Security Affairs
+- url: https://securityaffairs.co/wordpress/108188/hacking/invdos-dos-bitcoin-core.html
+- quote: Khan reported the flaw as part of the Decred bug bounty program causing its public disclosure.
+
+---
+
 - utc: 2020-09-12 14:33:55
 - event: "PR #3694 merged to Dash Core"
 - url: https://github.com/dashpay/dash/pull/3694#event-3759417575
@@ -318,9 +364,6 @@ But some articles and tweets contain outright misinformation, down to the blatan
 - event: Francisco Memoria published a story in Cryptoglobe
 - title: Bitcoin Engineers Rediscover Major Blockchain Vulnerability on Decred
 - url: https://www.cryptoglobe.com/latest/2020/09/bitcoin-engineers-rediscover-major-blockchain-vulnerability-on-decred/
-- quotes:
-  - quote: INVDoS was, however, rediscovered by another Bitocin protocol engineer earlier this year, as Javed Khan found it while looking for bugs in the Decred cryptocurrency. The bug was reported to its bug bounty program, and later on disclosed so other cryptocurrencies using the same protocol could patch it.
-  - note: not quite the case as shown by Dash. The paper only mentioned 3 altcoins. Litecoin and Namecoin were patched back in 2018. Decred was patched Jul 8 and released Aug 28. There is no indication in the invdos paper or website that any other projects besides Decred have been notified.
 - note: References ZDNet story.
 
 ---
