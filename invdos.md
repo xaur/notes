@@ -126,7 +126,7 @@ But some articles and tweets contain outright misinformation, down to the blatan
 - notes:
   - Khan gave comments to CoinDesk
   - note that the story published timestamp is just 45 minutes since Last-Modified of the PDF
-  - this is 2^8th day since Decred was notified of the vuln :tada:
+  - this is 2^8th day since Decred was notified of the vuln :tada:. Note that 64 is less than the 90 days disclosure delay adopted by Google Project Zero (if can call this a "standard", not sure)
   - 'High' in quotes of the title may indicate the professionalism of the journalist
 
 ---
