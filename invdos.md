@@ -15,6 +15,7 @@
 - Sep-13 https://decrypt.co/41685/developers-reveal-2018-bitcoin-bug-used-to-crash-entire-networks
 - Sep-14 https://thedailychain.com/bitcoin-engineers-identify-and-patch-vulnerability-in-decred-btcd-blockchains/
 - Sep-14 https://www.cryptoglobe.com/latest/2020/09/bitcoin-engineers-rediscover-major-blockchain-vulnerability-on-decred/
+- Sep-17 https://thedailychain.com/decred-clarify-details-of-reported-vulnerability/
 
 ## Discussions
 
@@ -30,6 +31,7 @@ The good bits:
 - the researchers have notified Decred about their intent to disclose publicly 13 days in advance (51 day since the original submission)
 - bug bounty program has proven to work and incentivize security research of Decred software
 - Decred and bug bounty got some media mentions (ZDNet, Cryptoglobe)
+- The Daily Chain posted an update clarifying the risks with a quote from @davecgh
 
 The bad bits:
 
@@ -392,3 +394,13 @@ Slow down, but not shut down. Please contact experts for clarifications.
 - utc: 2020-09-14 19:38:30
 - event: degeri tweeted on the misinformation regarding CVE-2018-17145
 - url: https://twitter.com/degeri_crypto/status/1305591774698786821
+
+---
+
+- utc: 2020-09-17 16:39:07
+- event: Gareth Jenkinson published a clarification on The Daily Chain
+- url: https://thedailychain.com/decred-clarify-details-of-reported-vulnerability/
+- notes:
+  - contains clarification by @davecgh that not 100% of nodes were affected and that Decred was patched by Decred devs
+  - 'vulnerability' in quote marks in the title is a nice little bonus
+  - thanks to @davecgh and @l1ndseymm for writing and delivering the commentary and for Gareth for posting the update
