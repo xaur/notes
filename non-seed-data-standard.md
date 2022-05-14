@@ -1,7 +1,10 @@
 ---
-title: Standard format for aux data export
+title: Standard format for non-seed wallet data
 published_url: https://github.com/decred/dcrwallet/issues/1731
+updated_utc: 2022-05-14
 ---
+
+## Motivation
 
 Decred wallets use some data that cannot be generated from the seed:
 
@@ -28,13 +31,14 @@ The purpose/behavior account tags address the following [point](https://matrix.t
 
 In the future, it may be extended to include an addressbook (name->addr map) and other stuff.
 
-The bundle file should be encrypted with a passphrase by default, but with a way to opt-out and save/load an uncencrypted file.
 
-Possible data structure is presented below. Note that multiple json files like this can store all your wallet setups (cold, desktop, mobile, voting, etc):
+## Schema
+
+Possible data structure is presented below. Note that multiple `.json` files like this can store all your wallet setups (cold, desktop, mobile, voting, etc):
 
 ```json
 {
-    "schema": "decred_wallet:v1",
+    "schema": "decred:wallet:v1",
     "name": "main",
     "description": "My main desktop wallet",
     "accounts": [
@@ -79,7 +83,7 @@ Possible data structure is presented below. Note that multiple json files like t
     ],
     "extensions": [
         {
-            "schema": "dcrwallet:v1",
+            "schema": "decred:dcrwallet:v1",
             "spv_enabled": false,
             "spv_use_ugly_ca_certs": false,
             "gap_limit": 20,
@@ -89,7 +93,7 @@ Possible data structure is presented below. Note that multiple json files like t
             "cache_passphrase_enabled": false,
         },
         {
-            "schema": "decrediton:v1",
+            "schema": "decred:decrediton:v1",
             "fancy_animations_enabled": false,
             "fancy_shadows_enabled": false,
             "gpu_rendering_enabled": false,
@@ -104,4 +108,25 @@ Possible data structure is presented below. Note that multiple json files like t
 }
 ```
 
-When creating a new wallet or restoring from seed in participating wallets, they could have a step that allows to import such file before seed entry.
+
+## Encryption
+
+The bundle file should be encrypted with a passphrase by default, but with a way to opt-out and save/load an uncencrypted file.
+
+Alternatively:
+
+> One trick that the LN SCB files use that might be considered for this is encrypting the content by using a well-known wallet private key (well-known in that it's a predefined BIP0044 path).
+> 
+> This makes it unnecessary to use a passphrase for encryption (since knowledge of the private key derived from the wallet seed is sufficient to decrypt the blob) and naturally provides protection against trying to apply the file to a different wallet (given that only the correct wallet seed could correctly decrypt the file). \[[@matheusd](https://github.com/decred/dcrwallet/issues/1731#issuecomment-654221219)\]
+
+Deriving the encryption key from seed introduces a limitation that must be considered: it requires to know the seed to decrypt non-seed data, and prevents from storing the seed *inside* of the bundle. Whether doing it is a good idea is another question.
+
+
+## UX
+
+When creating a new wallet or restoring from seed, wallets implementing this spec could have a step that allows to import such file *before* seed entry { todo - I forgot why before }.
+
+
+## Links
+
+- The idea was triggered by a chat [discussion](https://matrix.to/#/!HEeJkbPRpAqgAwhXWO:decred.org/$158868620225028cNQGe:decred.org) about implementing some CSPP [usage protections](https://github.com/decred/decrediton/issues/2455#issuecomment-623544042) in dcrwallet instead of Decrediton.
