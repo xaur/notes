@@ -12,3 +12,4 @@ Index:
 - [Re Ghana proposal](notes/4.md) (proposals, outreach)
 - [Removing wallet passphrase collection from politeiavoter](notes/2.md) (Politeia)
 - [Standard format for non-seed wallet data](notes/7.md) (wallets)
+- [Wrapped lines vs long lines in Markdown](notes/12.md)
